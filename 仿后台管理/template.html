@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <style>
+        .box {
+            margin-top: 56px;
+        }
+
+        .list-tag {
+            top: 56px;
+            bottom: 0;
+            background-color: #ddd;
+            padding: 0;
+        }
+
+        .coll-text {
+            font-size: 16px;
+        }
+
+        .ca {
+            border: none;
+        }
+
+        .ca li {
+            cursor: pointer;
+        }
+
+        .ca h2 {
+            cursor: pointer;
+        }
+
+        .comment {
+            resize: none;
+            height: 120px !important;
+        }
+
+        .pro-active {
+            color: #e4393c !important;
+        }
+
+        .pro-img {
+            width: 60px;
+            margin: 0 auto;
+        }
+
+        td {
+            vertical-align: middle;
+        }
+
+        .pro-title {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 500px;
+        }
+
+        .login-box {
+            margin-left: 150px
+        }
+
+        .login {
+            color: #e4393c;
+            cursor: pointer;
+            text-decoration-line: underline;
+        }
+
+        .register {
+            color: #fff;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        #headingOne>h2 {
+            display: inline-block;
+        }
+
+        .add-type {
+            cursor: pointer;
+            margin-left: 35px;
+            font-weight: bold
+        }
+
+        .logout {
+            margin-left: 15px;
+            cursor: pointer;
+            color: #7339e4;
+        }
+
+        .userId {
+            /* width: 100px; */
+            display: inline-block;
+            cursor: pointer;
+            /* text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap; */
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar-expand-lg navbar navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">商品后台管理系统</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#c">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="c">
+            <div class="login-box"><span class="login">你好，请登录</span><span class="register">免费注册</span></div>
+            <form class="form-inline my-2 my-lg-0  ml-auto d-none d-md-block mr-md-3">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            </form>
+
+            <ul class="navbar-nav">
+                <li class="nav-item active mr-md-3">
+                    <a class="nav-link" href="#">首页</a>
+                </li>
+                <li class="nav-item mr-md-3">
+                    <a class="nav-link" href="#">服务</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">商品</a>
+                </li>
+            </ul>
+
+            <form class="form-inline my-2 my-lg-0 d-md-none">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            </form>
+
+        </div>
+
+    </nav>
+
+    <div class="box">
+
+        <div class="container-fluid">
+
+            <div class="row">
+                <!-- 左侧菜单 -->
+                <div class="col-lg-2 fixed-top list-tag d-none  d-lg-block">
+
+                    <div class="accordion" id="accordionExample">
+
+                        <div class="card ca border-bottom">
+                            <div class="card-header" id="headingOne">
+                                <h2 class="mb-0">
+                                    <div class="coll-text" data-toggle="collapse" data-target="#one"
+                                        aria-expanded="true" aria-controls="collapseOne">
+                                        添加商品
+                                    </div>
+                                </h2>
+                                <span class="add-type">添加类型+</span>
+                            </div>
+
+                            <div id="one" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                <div class="card-body py-2">
+                                    <ul class="list-unstyled mb-0 add">
+                                        <!-- <li class="text-secondary" data-type="jujia">居家优品</li>
+                                        <li class="text-secondary" data-type="jingxuan">精选</li>
+                                        <li class="text-secondary" data-type="shenghuo">生活百货</li>
+                                        <li class="text-secondary" data-type="zhineng">智能先锋</li>
+                                        <li class="text-secondary" data-type="shishang">时尚达人</li> -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card ca border-bottom">
+                            <div class="card-header" id="headingTwo">
+                                <h2 class="mb-0">
+                                    <div class="collapsed coll-text" data-toggle="collapse" data-target="#two"
+                                        aria-expanded="false" aria-controls="collapseTwo">
+                                        查看商品
+                                    </div>
+                                </h2>
+                            </div>
+                            <div id="two" class="collapse " aria-labelledby="headingTwo"
+                                data-parent="#accordionExample">
+                                <div class="card-body py-2">
+                                    <ul class="list-unstyled mb-0 showdata">
+                                        <!-- <li class="text-secondary pro-active" data-type="jujia">居家优品</li>
+                                        <li class="text-secondary" data-type="jingxuan">精选</li>
+                                        <li class="text-secondary" data-type="shenghuo">生活百货</li>
+                                        <li class="text-secondary" data-type="zhineng">智能先锋</li>
+                                        <li class="text-secondary" data-type="shishang">时尚达人</li> -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-lg-10 offset-lg-2 col-12">
+
+                    <div class="t">
+                        <h3 class="my-4 p-t"></h3>
+                        <table class="table table-hover table-striped table-bordered">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>序号</th>
+                                    <th>商品图片</th>
+                                    <th>商品名称</th>
+                                    <th>商品价格</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                        <nav>
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item"><a class="page-link" href="#">上一页</a></li>
+                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">下一页</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- 模态框 添加商品-->
+    <div class="modal fade" id="m1">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">添加商品</h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <form>
+                        <div class="form-group mb-3">
+                            <label for="">商品类型</label>
+                            <input id="pro-type" data-type="" class="form-control" type="text" value="" disabled />
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="">商品名称</label>
+                            <input id="pro-name" class="form-control pro" type="text" placeholder="商品名称" />
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="">商品价格</label>
+                            <input id="pro-price" class="form-control pro" type="text" placeholder="商品价格" />
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="">商品图片链接</label>
+                            <input id="pro-url" class="form-control pro" type="text" placeholder="商品图片链接" />
+                        </div>
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                    <button id="save" type="button" class="btn btn-primary">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 模态框 编辑商品-->
+    <div class="modal fade" id="editm1">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 id="mtitle" class="modal-title">编辑商品</h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <form>
+                        <div class="form-group mb-3">
+                            <label for="">商品类型</label>
+                            <input id="edit-pro-type" class="form-control" type="text" disabled />
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="">商品名称</label>
+                            <input data-title="title" class="form-control edit-pro" type="text" placeholder="商品名称" />
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="">商品价格</label>
+                            <input data-title="price" class="form-control edit-pro" type="text" placeholder="商品价格" />
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="">商品图片链接</label>
+                            <input data-title="img" class="form-control edit-pro" type="text" placeholder="商品图片链接" />
+                        </div>
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                    <button id="saveedit" type="button" class="btn btn-primary">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 模态框 登录-->
+    <div class="modal fade" id="m1-login">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">用户登录</h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <form>
+
+                        <div class="form-group mb-3">
+                            <label for="">用户id</label>
+                            <input id="login-id" class="form-control pro" type="text" placeholder="用户id" />
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="">密码</label>
+                            <input id="login-pwd" class="form-control pro" type="password" placeholder="密码" />
+                        </div>
+
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                    <button id="save-login" type="button" class="btn btn-primary">登录</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 模态框 注册-->
+    <div class="modal fade" id="m1-register">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">用户注册</h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <form>
+
+                        <div class="form-group mb-3">
+                            <label for="">用户名</label>
+                            <input id="register-name" class="form-control pro" type="text" placeholder="用户名" />
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="">用户id</label>
+                            <input id="register-id" class="form-control pro" type="text" placeholder="用户id" />
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="">密码</label>
+                            <input id="register-pwd" class="form-control pro" type="text" placeholder="密码" />
+                        </div>
+
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                    <button id="save-register" type="button" class="btn btn-primary">注册</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 模态框 添加商品类型-->
+    <div class="modal fade" id="addtype">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 id="mtitle" class="modal-title">添加商品类型</h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <form>
+                        <div class="form-group mb-3">
+                            <label for="">商品类型</label>
+                            <input id="addtype-pro-type" class="form-control" type="text" placeholder="商品类型" />
+                        </div>
+
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                    <button id="savetype" type="button" class="btn btn-primary">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./jquery-3.4.1.min.js"></script>
+    <script src="./popper.min.js"></script>
+    <!-- <script src="./products.js"></script> -->
+    <script src="./bootstrap.min.js"></script>
+    <script src="./project.js"></script>
+    <!-- <script src="./index.js"></script> -->
+</body>
+
+</html>

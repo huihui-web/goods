@@ -1,0 +1,20 @@
+data-ride="false": 初始停止自动轮播，手动播放一张就会开启自动轮播
+
+data-ride="carousel" : 开启自动轮播
+
+data-interval="1000"：轮播图片的时长
+
+data-pause="hover": 鼠标悬浮停止自动轮播，离开启动自动轮播
+
+data-wrap="true": 循环轮播
+
+
+本地存储：localStorage
+用户没有手动删除，永久保存，存储大小为5MB
+
+获取本地储存数据
+localStorage.getItem(键名); 比如 localStorage.getItem('pros');
+
+
+设置(修改、添加)
+localStorage.setItem(键名, 字符串); 比如 localStorage.getItem('pros', '[]');   无法正确写入引用类数据，使用JSON.stringify()序列化引用类型数据
